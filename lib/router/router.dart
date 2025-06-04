@@ -5,6 +5,7 @@ import 'package:meditation/models/mindfull_exercise_model.dart';
 import 'package:meditation/models/sleep_content_model.dart';
 import 'package:meditation/pages/functions_page.dart';
 import 'package:meditation/pages/main_pages/create_custom_exercise.dart';
+import 'package:meditation/pages/main_pages/home_page.dart';
 import 'package:meditation/pages/main_screen.dart';
 import 'package:meditation/pages/mindfull_exercise_details_page.dart';
 import 'package:meditation/pages/mindfull_exercise_timer.dart';
@@ -24,7 +25,7 @@ class RouterClass {
       GoRoute(
         name: RouteNames.home,
         path: "/home",
-        builder: (context, state) => const MainScreen(),
+        builder: (context, state) => const HomePage(),
       ),
       GoRoute(
         name: RouteNames.functions,

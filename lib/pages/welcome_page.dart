@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:meditation/pages/main_screen.dart';
 import 'package:meditation/router/router.dart';
 //import 'package:meditation/router/router_class.dart';
 
@@ -74,14 +75,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           children: [
             ScaleTransition(
               scale: _scaleAnimation,
-              child: Lottie.asset(
-                'assets/animations/meditation_lotus.json',
-                width: 200,
-                height: 200,
+              child: Image.asset(
+                // Changed from Lottie.asset to Image.asset
+                'assets/images/mindfull.png', // Make sure this path points to your actual image file
+                width: 350,
+                height: 350,
                 fit: BoxFit.contain,
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
             FadeTransition(
               opacity: _opacityAnimation,
               child: SlideTransition(
@@ -132,7 +134,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                         vertical: 15,
                       ),
                     ),
-                    onPressed: () => RouterClass().router.go('/home'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MainScreen()),
+                      );
+                    },
                     child: Text(
                       'Begin Meditation',
                       style: GoogleFonts.lato(
